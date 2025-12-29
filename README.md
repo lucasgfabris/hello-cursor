@@ -18,7 +18,7 @@ CLI que gera um relatório diário em Markdown com **clima** e **tarefas do Jira
 ## 🚀 Instalação
 
 ```bash
-git clone https://github.com/seu-usuario/hello-cursor.git
+git clone https://github.com/lucasgfabris/hello-cursor.git
 cd hello-cursor
 npm install
 ```
@@ -65,36 +65,34 @@ O relatório é gerado em `./output/relatorio-YYYY-MM-DD.md` e abre automaticame
 
 ## 📄 Exemplo de Saída
 
-```markdown
-# 📊 Relatório Diário
-
-> 📅 segunda-feira, 29 de dezembro de 2025 às 13:00
-
----
-
-## 🌤️ Clima em Cariacica - ES
-
-| Métrica | Valor |
-|---------|-------|
-| 🌡️ Temperatura | **36°C** |
-| 🌤️ Condição | Predominantemente limpo |
-| 💧 Umidade | 48% |
-
----
-
-## 📋 Suas tarefas no Jira
-
-**17** tarefas · 🔄 5 em progresso · 📝 12 pendentes
-
-### 🏷️ Time Payments
-
-#### 🔄 Em Progresso (4)
-
-| Ticket | Descrição |
-|--------|----------|
-| [TAD-1351](https://...) | Implementar agrupamento |
-| [TAD-1352](https://...) | Criar Configuration entity |
-```
+> # 📊 Relatório Diário
+>
+> > 📅 segunda-feira, 29 de dezembro de 2025 às 13:00
+>
+> ---
+>
+> ## 🌤️ Clima em Cariacica - ES
+>
+> | Métrica | Valor |
+> |---------|-------|
+> | 🌡️ Temperatura | **36°C** |
+> | 🌤️ Condição | Predominantemente limpo |
+> | 💧 Umidade | 48% |
+>
+> ---
+>
+> ## 📋 Suas tarefas no Jira
+>
+> **17** tarefas · 🔄 5 em progresso · 📝 12 pendentes
+>
+> ### 🏷️ Time Payments
+>
+> #### 🔄 Em Progresso (4)
+>
+> | Ticket | Descrição |
+> |--------|----------|
+> | [TAD-1351](#) | Implementar agrupamento |
+> | [TAD-1352](#) | Criar Configuration entity |
 
 ## 🛠️ Scripts
 
