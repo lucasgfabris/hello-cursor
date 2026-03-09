@@ -1,21 +1,23 @@
-# Hello Cursor 🤖
+# Hello Cursor
 
-CLI que gera um relatório diário em Markdown com **clima** e **tarefas do Jira**.
+![GitHub repo size](https://img.shields.io/github/repo-size/lucasgfabris/hello-cursor?style=for-the-badge)
+![GitHub language count](https://img.shields.io/github/languages/count/lucasgfabris/hello-cursor?style=for-the-badge)
 
-![Preview](https://img.shields.io/badge/Markdown-Preview-blue?style=flat-square)
-![Node](https://img.shields.io/badge/Node.js-18+-green?style=flat-square)
-![TypeScript](https://img.shields.io/badge/TypeScript-5.3-blue?style=flat-square)
+> CLI que gera um relatorio diario em Markdown com clima em tempo real e tarefas do Jira. Abre automaticamente no preview do Cursor/VS Code.
 
-## ✨ Features
+<img src="imagem.png" alt="Hello Cursor">
 
-- 🌤️ **Clima em tempo real** via Open-Meteo (gratuito, sem API key)
-- 📍 **Detecção automática** da cidade pelas coordenadas
-- 📋 **Tarefas do Jira** agrupadas por projeto e status
-- 🔗 **Links clicáveis** para os tickets
-- 📄 **Markdown formatado** com tabelas e emojis
-- 🖥️ **Abre automaticamente** no preview do Cursor/VS Code
+## Pre-requisitos
 
-## 🚀 Instalação
+Antes de comecar, verifique se voce atendeu aos seguintes requisitos:
+
+- Node.js 18 ou superior
+- Cursor ou VS Code instalado
+- Token de API do Jira (opcional)
+
+## Instalando
+
+Para instalar o Hello Cursor, siga estas etapas:
 
 ```bash
 git clone https://github.com/lucasgfabris/hello-cursor.git
@@ -25,7 +27,7 @@ npm install
 
 O `npm install` configura automaticamente o Cursor para abrir arquivos `.md` no preview.
 
-## ⚙️ Configuração
+### Configuracao
 
 Crie um arquivo `.env` na raiz do projeto:
 
@@ -39,7 +41,7 @@ JIRA_BASE_URL=https://sua-empresa.atlassian.net
 JIRA_EMAIL=seu-email@empresa.com
 JIRA_API_TOKEN=seu_token_aqui
 
-# Caminho de saída
+# Caminho de saida
 OUTPUT_PATH=./output
 ```
 
@@ -49,60 +51,54 @@ OUTPUT_PATH=./output
 2. Clique em **Create API token**
 3. Copie o token para `JIRA_API_TOKEN`
 
-### Encontrando suas coordenadas
+## Usando
 
-1. Acesse [Google Maps](https://maps.google.com)
-2. Clique com botão direito no local desejado
-3. Copie as coordenadas (ex: `-20.33, -40.39`)
-
-## 📖 Uso
+Para usar o Hello Cursor, siga estas etapas:
 
 ```bash
 npm run hello
 ```
 
-O relatório é gerado em `./output/relatorio-YYYY-MM-DD.md` e abre automaticamente no preview.
+O relatorio e gerado em `./output/relatorio-YYYY-MM-DD.md` e abre automaticamente no preview.
 
-## 📄 Exemplo de Saída
+### Exemplo de Saida
 
-> # 📊 Relatório Diário
->
-> > 📅 segunda-feira, 29 de dezembro de 2025 às 13:00
->
-> ---
->
-> ## 🌤️ Clima em Cariacica - ES
->
-> | Métrica | Valor |
-> |---------|-------|
-> | 🌡️ Temperatura | **36°C** |
-> | 🌤️ Condição | Predominantemente limpo |
-> | 💧 Umidade | 48% |
->
-> ---
->
-> ## 📋 Suas tarefas no Jira
->
-> **17** tarefas · 🔄 5 em progresso · 📝 12 pendentes
->
-> ### 🏷️ Time Payments
->
-> #### 🔄 Em Progresso (4)
->
-> | Ticket | Descrição |
-> |--------|----------|
-> | [TAD-1351](#) | Implementar agrupamento |
-> | [TAD-1352](#) | Criar Configuration entity |
+```markdown
+# Relatorio Diario
 
-## 🛠️ Scripts
+> segunda-feira, 29 de dezembro de 2025 as 13:00
 
-| Comando | Descrição |
+## Clima em Cariacica - ES
+
+| Metrica | Valor |
+|---------|-------|
+| Temperatura | 36C |
+| Condicao | Predominantemente limpo |
+| Umidade | 48% |
+
+## Suas tarefas no Jira
+
+**17** tarefas - 5 em progresso - 12 pendentes
+```
+
+### Scripts Disponiveis
+
+| Comando | Descricao |
 |---------|-----------|
-| `npm run hello` | Gera o relatório e abre no preview |
+| `npm run hello` | Gera o relatorio e abre no preview |
 | `npm run build` | Compila o TypeScript |
 | `npm start` | Executa sem recompilar |
 
-## 📁 Estrutura
+## Tecnologias
+
+| Categoria | Tecnologias |
+|-----------|-------------|
+| Linguagem | TypeScript 5.3 |
+| Runtime | Node.js 18+ |
+| APIs | Open-Meteo, Nominatim, Jira Cloud |
+| HTTP | axios |
+
+## Estrutura do Projeto
 
 ```
 hello-cursor/
@@ -115,28 +111,22 @@ hello-cursor/
 │   │   ├── weather.service.ts # API Open-Meteo + Nominatim
 │   │   └── jira.service.ts    # API Jira
 │   └── utils/
-│       └── env.ts            # Configurações
+│       └── env.ts            # Configuracoes
 ├── scripts/
-│   └── setup.cjs             # Setup automático do Cursor
-├── output/                   # Relatórios gerados
-├── .env                      # Configurações (não commitado)
-└── package.json
+│   └── setup.cjs             # Setup automatico do Cursor
+└── output/                   # Relatorios gerados
 ```
 
-## 🔧 APIs Utilizadas
+## Contribuindo
 
-| API | Uso | Auth |
-|-----|-----|------|
-| [Open-Meteo](https://open-meteo.com/) | Clima | Gratuito, sem key |
-| [Nominatim](https://nominatim.org/) | Geocoding reverso | Gratuito, sem key |
-| [Jira Cloud](https://developer.atlassian.com/cloud/jira/) | Tarefas | API Token |
+Para contribuir com Hello Cursor, siga estas etapas:
 
-## 📝 Notas
+1. Bifurque este repositorio.
+2. Crie um branch: `git checkout -b <nome_branch>`.
+3. Faca suas alteracoes e confirme-as: `git commit -m '<mensagem_commit>'`
+4. Envie para o branch original: `git push origin <nome_branch>`
+5. Crie a solicitacao de pull.
 
-- Sem configurar o Jira, dados de exemplo são usados
-- O relatório é sobrescrito diariamente (mesmo nome por dia)
-- Status "Revisar" são ignorados (apenas To Do e In Progress)
+## Licenca
 
-## 📜 Licença
-
-MIT
+Esse projeto esta sob licenca MIT.
